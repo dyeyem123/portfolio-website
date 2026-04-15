@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter III - Experiences | OJT E-Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header subpage-header">
+        <div class="burger-menu" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <div class="brand-name">E-PORTFOLIO</div>
+    </header>
+
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <span class="close-btn" onclick="toggleMenu()">&times;</span>
+            <div class="profile-box">
+                <div class="avatar">JB</div>
+                <div class="profile-text">
+                    <h3>John Mark Q. Bacuel</h3>
+                    <p>BSIT Student Intern</p>
+                </div>
+            </div>
+        </div>
+        <div class="nav-links">
+            <p class="label">MAIN NAVIGATION</p>
+            <a href="index.html">🏠 Title Page</a>
+            <a href="chapter1.html">📁 Chapter I: Introduction</a>
+            <a href="chapter2.html">🏢 Chapter II: Profile</a>
+            <a href="chapter3.html">💼 Chapter III: Experiences</a>
+            <a href="appendices.html">📎 Appendices</a>
+        </div>
+    </nav>
+
+    <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
+    <main>
+        <div class="container sub-container">
+            <section class="content-card">
+                <h2 class="section-title">CHAPTER III: INTERNSHIP EXPERIENCES</h2>
+
+                <div class="section-header">
+                    <span class="section-number">A</span>
+                    <h3>WEEKLY ACCOMPLISHMENT REPORT</h3>
+                </div>
+
+                <div class="report-controls">
+                    <label for="weekSelect">Select Week:</label>
+                    <select id="weekSelect" onchange="updateWeeklyReport()">
+                        <option value="1">Week 1 (Feb 2 – 6)</option>
+                        <option value="2">Week 2 (Feb 9 – 13)</option>
+                        <option value="3">Week 3 (Feb 16 – 20)</option>
+                        <option value="4">Week 4 (Feb 23 – 27)</option>
+                        <option value="5">Week 5 (Mar 2 – 6)</option>
+                        <option value="6">Week 6 (Mar 9 – 13)</option>
+                        <option value="7">Week 7 (Mar 16 – 19)</option>
+                        <option value="8">Week 8 (Mar 23 – 27)</option>
+                        <option value="9">Week 9 (Mar 30 – Apr 1)</option>
+                        <option value="10">Week 10 (Apr 6 – 10)</option>
+                        <option value="11">Week 11 (Apr 13 – 17)</option>
+                        <option value="12">Week 12 (Apr 20 – 24)</option>
+                        <option value="13">Week 13 (Apr 27 – 30)</option>
+                        <option value="14">Week 14 (May 4 – 5)</option>
+                    </select>
+                </div>
+
+                <div id="weeklyDisplay" class="weekly-card">
+    <div class="weekly-banner">
+        <div class="banner-info">
+            <h4 id="weekTitle">Week 1: Weekly Performance Overview</h4>
+            <p id="weekPeriod">Period: February 2 – 6, 2026</p>
+        </div>
+    </div>
+
+    <div class="big-image-container" onclick="openFullImage()">
+        <img src="week1.jpg" alt="OJT Photo" id="weekImg" class="large-ojt-pic">
+        <div class="img-callout">📸 Click to View Full Image (2160px High Res)</div>
+    </div>
+
+    <div class="weekly-stats">
+        <div class="stat-item">
+            <h5>Status</h5>
+            <p id="weekRemarks" class="status-badge">Accomplished</p>
+        </div>
+        <div class="stat-item">
+            <h5>Problems Met</h5>
+            <p id="weekProblems">None</p>
+        </div>
+    </div>
+  
+    <div class="weekly-details">
+        <div class="detail-box">
+            <h5>🚀 Key Accomplishments</h5>
+            <p id="weekAccomplishments">Introduction to attorney and staff...</p>
+        </div>
+        <div class="detail-box">
+            <h5>💡 Skills Learned</h5>
+            <ul id="weekSkills"></ul>
+        </div>
+    </div>
+</div>
+
+                <div class="table-container">
+                    <h4>📊 Full Internship Log</h4>
+                    <table class="styled-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Activity</th>
+                                <th>Problems Met</th>
+                                <th>Remarks</th>
+                            </tr>
+                        </thead>
+                        <tbody id="fullLogTable">
+                            </tbody>
+                    </table>
+                </div>
+
+                <div class="section-header mt-50">
+    <span class="section-number">B</span>
+    <h3>DAILY TIME RECORD (DTR)</h3>
+</div>
+
+<div class="dtr-summary-grid">
+    <div class="summary-card">
+        <h4 id="totalHours">486</h4>
+        <p>Total Hours</p>
+    </div>
+    <div class="summary-card">
+        <h4 id="totalDays">61</h4>
+        <p>Working Days</p>
+    </div>
+    <div class="summary-card">
+        <h4>8</h4>
+        <p>Hours Per Day</p>
+    </div>
+</div>
+<div class="filter-container">
+    <div class="filter-group">
+        <label>📅 Filter by Month:</label>
+        <select id="monthFilter" onchange="filterDTR()">
+            <option value="all">All Months</option>
+            <option value="February">February</option>
+            <option value="March">March</option>
+            <option value="April">April</option>
+            <option value="May">May</option>
+        </select>
+    </div>
+    <div class="search-group">
+        <input type="text" id="dtrSearch" onkeyup="filterDTR()" placeholder="Search activities...">
+    </div>
+</div>
+
+<div class="table-container">
+    <table class="styled-table dtr-table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Description / Activities</th>
+                <th class="text-center">Hours</th>
+            </tr>
+        </thead>
+        <tbody id="dtrTableBody">
+            </tbody>
+    </table>
+</div>
+
+                <div class="section-header mt-50">
+    <span class="section-number">C</span>
+    <h3>INTERNSHIP PROGRESS REPORT</h3>
+</div>
+
+<div class="progress-overview">
+    <div class="progress-header">
+        <h4>Performance Summary</h4>
+        <div class="overall-badge">100% COMPLETION</div>
+    </div>
+    
+    <div class="progress-bar-container">
+        <div class="progress-label">Overall Objectives Met</div>
+        <div class="progress-track">
+            <div class="progress-fill" style="width: 100%;"></div>
+        </div>
+        <div class="progress-status">12/12 Objectives Accomplished</div>
+    </div>
+</div>
+
+<div class="table-container">
+    <table class="styled-table progress-table">
+        <thead>
+            <tr>
+                <th width="50px">#</th>
+                <th>Internship Objectives</th>
+                <th>Work Status</th>
+                <th>Problems Met</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>To understand the office environment, staff roles, and assigned tasks.</td>
+                <td><span class="status-pill done">Accomplished</span></td>
+                <td>None</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>To learn the process of notarizing documents.</td>
+                <td><span class="status-pill done">Accomplished</span></td>
+                <td>None</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>To learn how to prepare and organize documents for notarization.</td>
+                <td><span class="status-pill done">Accomplished</span></td>
+                <td>None</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>To develop skills in filing and organizing documents using alphabetical order.</td>
+                <td><span class="status-pill done">Accomplished</span></td>
+                <td>None</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>To learn how to scan documents and convert them into PDF files.</td>
+                <td><span class="status-pill done">Accomplished</span></td>
+                <td>None</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>To develop skills in compressing and managing digital files for email backup.</td>
+                <td><span class="status-pill done">Accomplished</span></td>
+                <td>None</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>To learn how to record information in the notarial register.</td>
+                <td><span class="status-pill done">Accomplished</span></td>
+                <td>None</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>To improve accuracy in encoding office documents and records.</td>
+                <td><span class="status-pill done">Accomplished</span></td>
+                <td>None</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>To improve communication skills by assisting clients in the office.</td>
+                <td><span class="status-pill done">Accomplished</span></td>
+                <td>None</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>To understand the workflow and daily procedures in a law office.</td>
+                <td><span class="status-pill done">Accomplished</span></td>
+                <td>None</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>To learn how to handle and safeguard important documents.</td>
+                <td><span class="status-pill done">Accomplished</span></td>
+                <td>None</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>To improve overall skills in organization, accuracy, and responsibility in office tasks.</td>
+                <td><span class="status-pill done">Accomplished</span></td>
+                <td>None</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+                <div class="section-header mt-50">
+    <span class="section-number">D</span>
+    <h3>INTERNSHIP ANALYSIS REPORT</h3>
+</div>
+
+<div class="analysis-container">
+    <div class="analysis-card">
+        <div class="card-icon">🏢</div>
+        <h4>1. Setting</h4>
+        <div class="analysis-body">
+            <p><strong>The setting was good because:</strong> The law office is organized and professional. I could see how the office works and do tasks like notarizing documents, filing papers, scanning, and helping clients. The staff taught me and helped me understand my work.</p>
+            <p><strong>The setting was limited by:</strong> The office uses manual ways to handle documents. We scan, compress, and send files by email. This takes a lot of time and can be slow sometimes.</p>
+            <p><strong>Initial Analysis:</strong> At first, I thought the office only did notarization and legal consultation. I learned that organizing documents and keeping records is very important too.</p>
+        </div>
+    </div>
+
+    <div class="analysis-card">
+        <div class="card-icon">👨‍⚖️</div>
+        <h4>2. Site Supervisor</h4>
+        <div class="analysis-body">
+            <p><strong>Greatest Contribution:</strong> The supervisor taught me how to handle documents correctly and follow office rules. They also guided me on how to do tasks carefully and professionally.</p>
+            <p><strong>Level of Supervision:</strong> The supervisor gave clear instructions and helped me whenever I needed guidance. Once I understood my tasks, I was allowed to work on my own.</p>
+            <p><strong>Areas for Growth:</strong> I would like to learn more about different types of legal documents and how the attorney manages client consultations and legal procedures.</p>
+        </div>
+    </div>
+
+    <div class="analysis-card">
+        <div class="card-icon">🌐</div>
+        <h4>3. Environmental Conditions</h4>
+        <div class="analysis-body">
+            <p><strong>Influential Event:</strong> Helping with notarized documents and talking to clients showed me the importance of being careful, organized, and polite. It taught me how to handle tasks under real office conditions.</p>
+            <p><strong>Impactful Issue:</strong> Doing most of the work manually and sending files by email takes a lot of time. Sometimes large files need extra work to compress before sending, which can slow the office workflow.</p>
+            <p><strong>Diversity Opportunity:</strong> I talked to many different clients and learned how to explain tasks clearly. This helped me improve my communication and problem-solving skills.</p>
+        </div>
+    </div>
+
+    <div class="analysis-card highlight-card">
+        <div class="card-icon">⭐</div>
+        <h4>4. Self-Assessment</h4>
+        <div class="analysis-body">
+            <p><strong>Most Important Learning:</strong> I learned that being careful, responsible, and professional is very important when handling legal documents. Accuracy and organization are key.</p>
+            <p><strong>My Contributions:</strong> I helped with notarization, organized files alphabetically, scanned and compressed documents, and managed backups for the attorney’s record.</p>
+            <p><strong>Future Goals:</strong> I want to learn more about attorney’s work during consultations and explore ways to make document handling faster and easier using technology.</p>
+            <p><strong>Reflection:</strong> If I were to repeat this, I would ask more questions, observe more tasks, and be more confident when helping clients.</p>
+        </div>
+    </div>
+
+    <div class="analysis-card">
+        <div class="card-icon">💡</div>
+        <h4>5. General</h4>
+        <div class="analysis-body">
+            <div class="recommendation-box">
+                <p><strong>Strengthening the Experience:</strong> The office could use a simple digital system or website to organize scanned documents and backups. This would save time and reduce repetitive manual work.</p>
+            </div>
+            <p><strong>Advice for Future Interns:</strong> Be active, polite, careful, and ready to learn. Pay attention to details and try to understand both office and technical tasks.</p>
+        </div>
+    </div>
+</div>
+
+<div class="confidential-note">
+    <p><em>Note: This analysis is for academic reflection purposes and is not shared with the site supervisor.</em></p>
+</div>
+
+            </section>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        // Initial load for Chapter 3
+        window.onload = function() {
+            populateTable();
+            updateWeeklyReport();
+        };
+    </script>
+</body>
+</html>

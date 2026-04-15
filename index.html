@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OJT E-Portfolio | John</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Custom styles para sa Logos at Title Alignment */
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px; /* Pagitan ng bawat logo */
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .logo-container img {
+            height: 80px; /* Standard height para sa mga logos */
+            width: auto;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3)); /* Para lumitaw sa background */
+        }
+
+        .college-name {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--accent); /* Ginamit ang gold color from your CSS */
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 10px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .hero-content {
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .logo-container img { height: 50px; }
+            .college-name { font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="burger-menu" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <div class="brand-name">E-PORTFOLIO</div>
+    </header>
+
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <span class="close-btn" onclick="toggleMenu()">&times;</span>
+            <div class="profile-box">
+                <div class="avatar">JB</div>
+                <div class="profile-text">
+                    <h3>John Mark Q. Bacuel</h3>
+                    <p>BSIT Student Intern</p>
+                </div>
+            </div>
+        </div>
+        <div class="nav-links">
+            <p class="label">MAIN NAVIGATION</p>
+            <a href="index.html">🏠 Title Page</a>
+            <a href="chapter1.html">📁 Chapter I: Introduction</a>
+            <a href="chapter2.html">🏢 Chapter II: Profile</a>
+            <a href="chapter3.html">💼 Chapter III: Experiences</a>
+            <a href="index.html#ack">🤝 Acknowledgement</a>
+        </div>
+        <div class="sidebar-footer">
+            <p><strong>Villamar Law Office</strong></p>
+            <p>Internship 2026</p>
+        </div>
+    </nav>
+
+    <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
+    <main>
+        <section id="home" class="hero-fullscreen">
+            <div class="hero-overlay">
+                <div class="hero-content">
+                    
+                    <div class="logo-container">
+                        <img src="omsc_logo.png" alt="OMSC Logo">
+                        <img src="bsit_logo.png" alt="BSIT Logo">
+                        <img src="villamar_logo.png" alt="Villamar Law Office Logo">
+                        </div>
+
+                    <h1 class="main-title">ON-THE-JOB TRAINING</h1>
+                    
+                    <div class="college-name">
+                        College of Arts, Science and Technology
+                    </div>
+
+                    <div class="mouse-scroll">
+                        <div class="mouse"></div>
+                        <p>Scroll Down</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <section id="toc" class="content-card">
+                <h2 class="section-title">TABLE OF CONTENTS</h2>
+                <div class="detailed-toc">
+                    <div class="toc-item">
+                        <div class="toc-header">FRONT MATTERS</div>
+                        <ul class="toc-sublist">
+                            <li>Title Page</li>
+                            <li>Acknowledgement</li>
+                            <li>Table of Contents</li>
+                            <li>Student Trainee Prayer</li>
+                            <li>Personal Philosophy</li>
+                            <li>Career Plan</li>
+                        </ul>
+                    </div>
+
+                    <div class="toc-item">
+                        <div class="toc-header">CHAPTER I: INTRODUCTION</div>
+                        <ul class="toc-sublist">
+                            <li>A. Importance of Internship</li>
+                            <li>B. Objectives of Internship</li>
+                            <li>C. Time and Place of Internship</li>
+                        </ul>
+                    </div>
+
+                    <div class="toc-item">
+                        <div class="toc-header">CHAPTER II: COMPANY PROFILE</div>
+                        <ul class="toc-sublist">
+                            <li>1. Nature of the Agency</li>
+                            <li>2. Mission/Vision/Goal Statement</li>
+                            <li>3. History/Background of the Agency/Office with Pictures</li>
+                            <li>4. Organizational Structure</li>
+                        </ul>
+                    </div>
+
+                    <div class="toc-item">
+                        <div class="toc-header">CHAPTER III: WORK EXPERIENCES</div>
+                        <ul class="toc-sublist">
+                            <li>1. Weekly accomplishment report</li>
+                            <li>2. Daily Time Record</li>
+                            <li>3. Internship Progress Report</li>
+                            <li>4. Internship Analysis Report</li>
+                        </ul>
+                    </div>
+
+                    <div class="toc-item">
+                        <div class="toc-header">CHAPTER IV: ASSESSMENT</div>
+                        <ul class="toc-sublist">
+                            <li>1. Student Internship Evaluation Form</li>
+                        </ul>
+                    </div>
+
+                    <div class="toc-item">
+                        <div class="toc-header">APPENDICES</div>
+                        <ul class="appendix-grid">
+                            <li><span>A</span> Evaluation Form</li>
+                            <li><span>B</span> Registration Form</li>
+                            <li><span>C</span> Student ID</li>
+                            <li><span>D</span> Parent's Consent</li>
+                            <li><span>E</span> Medical Certificate</li>
+                            <li><span>F</span> Good Moral Character</li>
+                            <li><span>G</span> Application Letter</li>
+                            <li><span>H</span> Endorsement Letter</li>
+                            <li><span>I</span> Memorandum of Agreement</li>
+                            <li><span>J</span> Time Card (DTR)</li>
+                            <li><span>K</span> Certificate of Completion</li>
+                            <li><span>L</span> Certificate of Clearance</li>
+                            <li><span>M</span> Performance Rating</li>
+                            <li><span>N</span> Pre-service Seminar</li>
+                            <li><span>O</span> Office Work Pictures</li>
+                            <li><span>P</span> Code of Ethics</li>
+                            <li><span>Q</span> Curriculum Vitae</li>
+                            <li><span>R</span> Portfolio Evaluation Form</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="ack" class="content-card">
+    <h2 class="section-title">ACKNOWLEDGEMENT</h2>
+    <div class="content-body text-justify">
+        <p>I would like to express my sincere gratitude to all the people who supported me throughout my On-the-Job Training journey.</p>
+        <p>First and foremost, I thank <strong>God</strong> for giving me strength, guidance, and wisdom every day. Without His blessings, I would not have been able to complete this journey successfully.</p>
+        <p>I would also like to thank my supervisor and the staff at <strong>Villamar Law Office</strong> for giving me the opportunity to learn and gain experience in a professional environment. Their guidance, patience, and support helped me improve my skills, build confidence, and understand the responsibilities in a real workplace.</p>
+        <p>My heartfelt thanks also go to my instructors for their continuous guidance, encouragement, and valuable advice throughout my training. Their support inspired me to do my best and stay motivated.</p>
+        <p>Lastly, I am deeply grateful to my family and friends for their unwavering support, understanding, and motivation. They have always been there for me during challenges and have encouraged me to keep going.</p>
+        <p>Once again, thank you to everyone who became part of my OJT journey. Your support truly means a lot to me.</p>
+    </div>
+</section>
+
+<section id="prayer" class="content-card prayer-bg">
+    <h2 class="section-title">PRAYER OF A STUDENT TRAINEE</h2>
+    <div class="content-body text-center prayer-text">
+        <p><em>Dear God,</em></p>
+        <p>Thank You for giving me the opportunity to learn and grow through my On-the-Job Training. Thank You for guiding me each day and for the strength You give me to continue.</p>
+        <p>Please guide me in all my tasks and responsibilities, and help me to do my best in everything I do. Give me patience, wisdom, and courage to face challenges, and help me learn from every experience.</p>
+        <p>Teach me to become responsible, hardworking, and respectful in my workplace. May I always show a good attitude and bring honor to my school, my family, and to You.</p>
+        <p>Bless my supervisors, co-workers, and everyone who helps me along the way. Continue to guide us and keep us safe always.</p>
+        <p><strong>Amen.</strong></p>
+    </div>
+</section>
+
+<section id="philosophy" class="content-card">
+    <h2 class="section-title">PHILOSOPHY IN LIFE</h2>
+    <div class="content-body">
+        <blockquote class="text-center">
+            "My philosophy in life is to keep moving forward no matter what challenges I face."
+        </blockquote>
+        <div class="text-justify">
+            <p>I believe that success is achieved through hard work, patience, and the willingness to learn from both successes and failures. I see every experience as an opportunity to improve myself and become stronger. For me, mistakes are not something to be afraid of, but lessons that help me grow and make better decisions in the future.</p>
+            <p>I value responsibility, respect, and determination because these guide me in reaching my goals. I also believe that true success is not only about achievements, but also about having good character and treating others with kindness. Above all, I trust in God’s plan for my life.</p>
+        </div>
+    </div>
+</section>
+
+<section id="career" class="content-card">
+    <h2 class="section-title">CAREER PLAN</h2>
+    <div class="content-body text-justify">
+        <p>In the future, my main goal is to finish my studies and find a stable job that can support my needs and help my family. I am open to any opportunities that will help me grow—what is important for me is to have a decent job, earn honestly, and become independent. If given the chance, I am also willing to work abroad to earn a higher income and save for my future.</p>
+        <p>In the long run, I plan to start my own business so I can have a stable and continuous source of income. I want to build something that I can call my own and that can also help my family. With determination and faith in God, I believe I can reach my dreams and have a better life.</p>
+    </div>
+</section>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
