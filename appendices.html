@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter I - Introduction | OJT E-Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="omsc_logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header subpage-header">
+        <div class="burger-menu" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <div class="brand-name">E-PORTFOLIO</div>
+    </header>
+
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <span class="close-btn" onclick="toggleMenu()">&times;</span>
+            <div class="profile-box">
+    <img src="me.png" alt="Profile Picture" class="avatar-img">
+    <div class="profile-text">
+        <h3>John Mark Q. Bacuel</h3>
+        <p>BSIT Student Intern</p>
+    </div>
+</div>
+        </div>
+        <div class="nav-links">
+            <p class="label">E-Portfolio Contents</p>
+            <a href="index.html">🏠 Title Page</a>
+            <a href="chapter1.html">📁 Chapter I: Introduction</a>
+            <a href="chapter2.html">🏢 Chapter II: Profile</a>
+            <a href="chapter3.html">💼 Chapter III: Experiences</a>
+            <a href="appendices.html">📎 Appendices</a>
+</div>
+ <div class="sidebar-footer">
+            <p><strong>Villamar Law Office</strong></p>
+            <p>Internship 2026</p>
+        </div>
+    </nav>
+
+    <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
+    <main>
+    <div class="container sub-container">
+        <section class="content-card">
+            <h2 class="section-title">APPENDICES</h2>
+
+            <h3 class="appendix-label">📁 Official Documents</h3>
+<div class="docs-two-column">
+    
+    <div class="doc-card">
+        <div class="doc-icon">📝</div>
+        <div class="doc-info">
+            <h4>Appendix A. Evaluation Form</h4>
+            <p>Official Student Evaluation Form for Academic Grade Assessment.</p>
+        </div>
+        <button class="view-btn" onclick="openGallery(['eval_form.jpg'])">View</button>
+    </div>
+
+    <div class="doc-card">
+        <div class="doc-icon">📄</div>
+        <div class="doc-info">
+            <h4>Appendix B. Registration Form</h4>
+            <p>Official registration form for the internship program.</p>
+        </div>
+        <button class="view-btn" onclick="openGallery(['reg_form.jpg'])">View</button>
+    </div>
+
+    <div class="doc-card">
+        <div class="doc-icon">🪪</div>
+        <div class="doc-info">
+            <h4>Appendix C. Student ID</h4>
+            <p>Front and back copies of the institutional identification card.</p>
+        </div>
+        <button class="view-btn" onclick="openGallery(['student_id_front.jpg', 'student_id_back.jpg'])">View</button>
+    </div>
+
+    <div class="doc-card">
+        <div class="doc-icon">✍️</div>
+        <div class="doc-info">
+            <h4>Appendix D. Parent's Consent</h4>
+            <p>Notarized document certifying parental permission.</p>
+        </div>
+        <button class="view-btn" onclick="openGallery(['parent_consent.jpg'])">View</button>
+    </div>
+
+    <div class="doc-card">
+        <div class="doc-icon">🏥</div>
+        <div class="doc-info">
+            <h4>Appendix E. Medical Certificate</h4>
+            <p>Health and dental clearance certifying fitness for work.</p>
+        </div>
+        <button class="view-btn" onclick="openGallery(['medcert.jpg', 'dentcert.jpg'])">View</button>
+    </div>
+
+    <div class="doc-card">
+        <div class="doc-icon">📜</div>
+        <div class="doc-info">
+            <h4>Appendix F. Certificate of Good Moral</h4>
+            <p>Document certifying the student's good conduct.</p>
+        </div>
+        <button class="view-btn" onclick="openGallery(['good_moral.jpg'])">View</button>
+    </div>
+
+    <div class="doc-card">
+        <div class="doc-icon">✉️</div>
+        <div class="doc-info">
+            <h4>Appendix G. Application Letter</h4>
+            <p>Formal letter sent to the agency for internship application.</p>
+        </div>
+        <button class="view-btn" onclick="openGallery(['application_letter.jpg'])">View</button>
+    </div>
+
+    <div class="doc-card">
+        <div class="doc-icon">📩</div>
+        <div class="doc-info">
+            <h4>Appendix H. Endorsement Letter</h4>
+            <p>Recommendation letter from the college to the agency.</p>
+        </div>
+        <button class="view-btn" onclick="openGallery(['endorsement_letter.jpg'])">View</button>
+    </div>
+
+    <div class="doc-card">
+        <div class="doc-icon">🤝</div>
+        <div class="doc-info">
+            <h4>Appendix I. Memorandum of Agreement</h4>
+            <p>The legal contract between school and host agency (5 Pages).</p>
+        </div>
+        <button class="view-btn" onclick="openGallery(['moa1.jpg', 'moa2.jpg', 'moa3.jpg', 'moa4.jpg', 'moa5.jpg'])">View</button>
+    </div>
+
+    <div class="doc-card">
+        <div class="doc-icon">⏰</div>
+        <div class="doc-info">
+            <h4>Appendix J. Daily Time Record</h4>
+            <p>Monthly record of attendance and rendered hours.</p>
+        </div>
+        <button class="view-btn" onclick="openGallery(['dtr_february.jpg', 'dtr_march.jpg', 'dtr_april.jpg', 'dtr_may.jpg'])">View</button>
+    </div>
+
+    <div class="doc-card">
+        <div class="doc-icon">🎓</div>
+        <div class="doc-info">
+            <h4>Appendix K. Certificate of Completion</h4>
+            <p>Certification issued after completing 486 hours.</p>
+        </div>
+        <button class="view-btn" onclick="openGallery(['certificate_of_completion.jpg'])">View</button>
+    </div>
+
+    <div class="doc-card">
+        <div class="doc-icon">✅</div>
+        <div class="doc-info">
+            <h4>Appendix L. Certificate of Clearance</h4>
+            <p>Proof of clearance from all office responsibilities.</p>
+        </div>
+        <button class="view-btn" onclick="openGallery(['certificate_of_clearance.jpg'])">View</button>
+    </div>
+
+    <div class="doc-card">
+        <div class="doc-icon">📊</div>
+        <div class="doc-info">
+            <h4>Appendix M. Performance Rating</h4>
+            <p>Documented final rating from the site supervisor.</p>
+        </div>
+        <button class="view-btn" onclick="openGallery(['prs.jpg'])">View</button>
+    </div>
+
+    <div class="doc-card">
+        <div class="doc-icon">👤</div>
+        <div class="doc-info">
+            <h4>Appendix Q. Curriculum Vitae</h4>
+            <p>Professional profile and technical background.</p>
+        </div>
+        <button class="view-btn" onclick="openGallery(['curriculum_vitae1.jpg', 'curriculum_vitae2.jpg'])">View</button>
+    </div>
+            </div>
+
+            <hr class="divider">
+<h3 class="appendix-label">📸 Visual Documentation</h3>
+
+<div class="visual-section">
+    <h4>N. Pictures during Pre-service Seminar</h4>
+    <div class="gallery-grid-2col">
+        <div class="gallery-item" onclick="openGallery(['preservice_seminar1.jpg'], 0)">
+            <div class="img-container">
+                <img src="preservice_seminar1.jpg" alt="Seminar 1">
+                <div class="img-overlay"><span>🔍 Click to Enlarge</span></div>
+            </div>
+            <p class="img-label">Group Photo with OJT Coordinators and Trainees</p>
+        </div>
+
+        <div class="gallery-item" onclick="openGallery(['preservice_seminar2.jpg'], 0)">
+            <div class="img-container">
+                <img src="preservice_seminar2.jpg" alt="Seminar 2">
+                <div class="img-overlay"><span>🔍 Click to Enlarge</span></div>
+            </div>
+            <p class="img-label">Photo Booth Snapshot during Pre-service Seminar</p>
+        </div>
+
+        <div class="gallery-item" onclick="openGallery(['preservice_seminar3.jpg'], 0)">
+            <div class="img-container">
+                <img src="preservice_seminar3.jpg" alt="Seminar 3">
+                <div class="img-overlay"><span>🔍 Click to Enlarge</span></div>
+            </div>
+            <p class="img-label">Group Photo with Friends and OJT Coordinator</p>
+        </div>
+
+        <div class="gallery-item" onclick="openGallery(['preservice_seminar4.jpg'], 0)">
+            <div class="img-container">
+                <img src="preservice_seminar4.jpg" alt="Seminar 4">
+                <div class="img-overlay"><span>🔍 Click to Enlarge</span></div>
+            </div>
+            <p class="img-label">Individual Photo during Pre-service Seminar</p>
+        </div>
+    </div>
+
+    <h4 class="mt-40">O. Pictures during Office Works</h4>
+    <div class="gallery-grid-2col">
+        <div class="gallery-item" onclick="openGallery(['pictures1.jpg'], 0)">
+            <div class="img-container">
+                <img src="pictures1.jpg" alt="Office Work 1">
+                <div class="img-overlay"><span>🔍 Click to Enlarge</span></div>
+            </div>
+            <p class="img-label">Document Notarization Support</p>
+        </div>
+
+        <div class="gallery-item" onclick="openGallery(['pictures2.jpg'], 1)">
+            <div class="img-container">
+                <img src="pictures2.jpg" alt="Office Work 2">
+                <div class="img-overlay"><span>🔍 Click to Enlarge</span></div>
+            </div>
+            <p class="img-label">Filing and Records Management</p>
+        </div>
+
+        <div class="gallery-item" onclick="openGallery(['pictures3.jpg'], 2)">
+            <div class="img-container">
+                <img src="pictures3.jpg" alt="Office Work 3">
+                <div class="img-overlay"><span>🔍 Click to Enlarge</span></div>
+            </div>
+            <p class="img-label">Digital Encoding and Archiving</p>
+        </div>
+
+        <div class="gallery-item" onclick="openGallery(['pictures4.jpg'], 3)">
+            <div class="img-container">
+                <img src="pictures4.jpg" alt="Office Work 4">
+                <div class="img-overlay"><span>🔍 Click to Enlarge</span></div>
+            </div>
+            <p class="img-label">Assisting Law Office Clients</p>
+        </div>
+    </div>
+</div>
+
+            <hr class="divider">
+
+            <h3 class="appendix-label">📜 Code of Ethics</h3>
+            <div class="ethics-section">
+                <div class="doc-info mb-20">
+                    <h4>P. Code of Ethics for CAST Student Internship</h4>
+                    <p>Official code of ethics that governed student conduct during the internship.</p>
+                </div>
+                
+                <div class="ethics-card">
+                    <div class="ethics-header">
+                        <h5>College of Arts, Sciences, and Technology</h5>
+                        <h4>Student Internship Code of Ethics</h4>
+                    </div>
+                    <div class="ethics-content">
+                        <p class="preamble"><strong>Preamble:</strong> I will use my special knowledge for the benefit of the public. I will serve employees and clients with integrity, subject to an overriding responsibility to the public interest, and I will strive to enhance the competence and prestige of the profession. By these means:</p>
+                        
+                        <ul class="ethics-list">
+                            <li><span>1</span> I will promote public knowledge understanding and appreciation of information technology.</li>
+                            <li><span>2</span> I will consider the general welfare and public good in the performance of my work.</li>
+                            <li><span>3</span> I will advertise goods or professional services in a clear and truthful manner.</li>
+                            <li><span>4</span> I will comply and strictly abide by the intellectual property laws, patent laws and other related laws on respect of information technology.</li>
+                            <li><span>5</span> I will accept full responsibility for the work undertaken and utilize skills with competence and professionalism.</li>
+                            <li><span>6</span> I will make truthful statement on my areas of competence as well as the capabilities and qualities of my products or services.</li>
+                            <li><span>7</span> I will not disclose any confidential information obtained in the course of professional duties without the consent of the parties concerned, except when required by law.</li>
+                            <li><span>8</span> I will try to attain the highest quality in both the products and services that I offer.</li>
+                            <li><span>9</span> I will not knowingly participate in the development of information technology system that promotes the commission of proud and other unlawful acts.</li>
+                            <li><span>10</span> I will uphold and improve the IT profession standard through continuing professional development in order to enhance the IT professionals.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="divider">
+
+            <h3 class="appendix-label">📑 Portfolio Evaluation Form</h3>
+            <div class="doc-card">
+                <div class="doc-icon">⭐</div>
+                <div class="doc-info">
+                    <h4>R. On-The-Job Training Portfolio Evaluation Form</h4>
+                    <p>Official form used to evaluate this OJT portfolio submission.</p>
+                </div>
+                <button class="view-btn" onclick="openGallery(['portfolio_evaluation.jpg'])">View Form</button>
+            </div>
+        </section>
+    </div>
+
+    <div id="docViewer" class="viewer-modal">
+        <span class="close-viewer" onclick="closeGallery()">&times;</span>
+        <div class="viewer-content">
+            <img id="viewerImg" src="">
+            <div class="viewer-controls">
+                <button id="prevBtn" onclick="changeImage(-1)">❮ Previous</button>
+                <span id="pageIndicator">1 / 1</span>
+                <button id="nextBtn" onclick="changeImage(1)">Next ❯</button>
+            </div>
+        </div>
+    </div>
+</main>
+
+    <script src="script.js"></script>
+</body>
+</html>
