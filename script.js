@@ -202,3 +202,63 @@ function filterDTR() {
 window.addEventListener('DOMContentLoaded', () => {
     populateDTR(dtrData);
 });
+
+
+//APPENDICES
+let activeImages = [];
+let currentIndex = 0;
+
+function openGallery(images) {
+    activeImages = images;
+    currentIndex = 0;
+    updateViewer();
+    document.getElementById("docViewer").style.display = "flex";
+    document.body.style.overflow = "hidden"; // Disable scroll
+}
+
+function closeGallery() {
+    document.getElementById("docViewer").style.display = "none";
+    document.body.style.overflow = "auto"; // Enable scroll
+}
+
+function changeImage(step) {
+    currentIndex += step;
+    if (currentIndex >= activeImages.length) currentIndex = 0;
+    if (currentIndex < 0) currentIndex = activeImages.length - 1;
+    updateViewer();
+}
+
+function updateViewer() {
+    const imgElement = document.getElementById("viewerImg");
+    const indicator = document.getElementById("pageIndicator");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+
+    imgElement.src = activeImages[currentIndex];
+    indicator.innerText = `${currentIndex + 1} / ${activeImages.length}`;
+
+    // Itago ang buttons kung 1 page lang
+    if (activeImages.length <= 1) {
+        prevBtn.style.visibility = "hidden";
+        nextBtn.style.visibility = "hidden";
+    } else {
+        prevBtn.style.visibility = "visible";
+        nextBtn.style.visibility = "visible";
+    }
+}
+
+// Keyboard support (Escape to close, Arrows to nav)
+document.addEventListener('keydown', function(e) {
+    if (document.getElementById("docViewer").style.display === "flex") {
+        if (e.key === "Escape") closeGallery();
+        if (e.key === "ArrowRight") changeImage(1);
+        if (e.key === "ArrowLeft") changeImage(-1);
+    }
+});
+function openGallery(images, startIndex = 0) {
+    activeImages = images;
+    currentIndex = startIndex; // Dito mag-uumpisa sa clinick na image
+    updateViewer();
+    document.getElementById("docViewer").style.display = "flex";
+    document.body.style.overflow = "hidden"; 
+}
