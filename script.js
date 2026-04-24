@@ -292,3 +292,16 @@ window.addEventListener('DOMContentLoaded', () => {
         updateWeeklyReport();
     }
 });
+
+function toggleDropdown(element) {
+    // I-rotate ang arrow
+    element.classList.toggle('active');
+    
+    // Hanapin ang katabing sub-menu at i-show/hide
+    const subMenu = element.parentElement.nextElementSibling;
+    if (subMenu.classList.contains('show')) {
+        subMenu.classList.remove('show');
+    } else {
+        subMenu.classList.add('show');
+    }
+}

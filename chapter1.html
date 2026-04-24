@@ -31,12 +31,46 @@
 </div>
         </div>
         <div class="nav-links">
-            <p class="label">E-Portfolio Contents</p>
-            <a href="index.html">🏠 Title Page</a>
-            <a href="chapter1.html">📁 Chapter I: Introduction</a>
-            <a href="chapter2.html">🏢 Chapter II: Profile</a>
-            <a href="chapter3.html">💼 Chapter III: Experiences</a>
-            <a href="appendices.html">📎 Appendices</a>
+    <p class="label">E-Portfolio Contents</p>
+    
+    <a href="index.html">🏠 Title Page</a>
+
+    <div class="nav-group">
+        <div class="nav-item-wrapper">
+            <a href="chapter1.html">📁 Chapter I</a>
+            <span class="arrow" onclick="toggleDropdown(this)">▼</span>
+        </div>
+        <div class="sub-menu">
+            <a href="chapter1.html#importance">A. Importance of Internship</a>
+            <a href="chapter1.html#objectives">B. Objectives of Internship</a>
+            <a href="chapter1.html#time-place">C. Time and Place</a>
+        </div>
+    </div>
+
+    <div class="nav-group">
+        <div class="nav-item-wrapper">
+            <a href="chapter2.html">🏢 Chapter II</a>
+            <span class="arrow" onclick="toggleDropdown(this)">▼</span>
+        </div>
+        <div class="sub-menu">
+            <a href="chapter2.html#nature">1. Nature of Agency</a>
+            <a href="chapter2.html#mission">2. Mission/Vision</a>
+            <a href="chapter2.html#history">3. History</a>
+        </div>
+    </div>
+
+    <div class="nav-group">
+        <div class="nav-item-wrapper">
+            <a href="chapter3.html">💼 Chapter III</a>
+            <span class="arrow" onclick="toggleDropdown(this)">▼</span>
+        </div>
+        <div class="sub-menu">
+            <a href="chapter3.html#weekly">1. Weekly Reports</a>
+            <a href="chapter3.html#dtr">2. Daily Time Record</a>
+        </div>
+    </div>
+
+    <a href="appendices.html">📎 Appendices</a>
 </div>
  <div class="sidebar-footer">
             <p><strong>Villamar Law Office</strong></p>
@@ -48,7 +82,7 @@
 
     <main>
     <div class="container sub-container">
-        <section class="content-card">
+        <section id="importance" class="content-card">
             <h2 class="section-title">CHAPTER I: INTRODUCTION</h2>
             
             <div class="section-header">
@@ -68,7 +102,7 @@
             </div>
         </section>
 
-        <section class="content-card">
+        <section id="objectives" class="content-card">
             <div class="section-header">
                 <span class="section-number">B</span>
                 <h3>OBJECTIVES OF INTERNSHIP</h3>
@@ -101,7 +135,7 @@
             </div>
         </section>
 
-        <section class="content-card">
+        <section id="time-place" class="content-card">
             <div class="section-header">
                 <span class="section-number">C</span>
                 <h3>TIME AND PLACE</h3>
