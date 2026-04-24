@@ -47,7 +47,8 @@
     <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
 
     <main>
-        <div class="container sub-container">
+        
+       <div class="container sub-container">
             <section class="content-card">
                 <h2 class="section-title">CHAPTER III: INTERNSHIP EXPERIENCES</h2>
 
@@ -77,40 +78,40 @@
                 </div>
 
                 <div id="weeklyDisplay" class="weekly-card">
-    <div class="weekly-banner">
-        <div class="banner-info">
-            <h4 id="weekTitle">Week 1: Weekly Performance Overview</h4>
-            <p id="weekPeriod">Period: February 2 – 6, 2026</p>
-        </div>
-    </div>
+                    <div class="weekly-banner">
+                        <div class="banner-info">
+                            <h4 id="weekTitle">Week 1: Weekly Performance Overview</h4>
+                            <p id="weekPeriod">Period: February 2 – 6, 2026</p>
+                        </div>
+                    </div>
 
-    <div class="big-image-container" onclick="openFullImage()">
-        <img src="week1.jpg" alt="OJT Photo" id="weekImg" class="large-ojt-pic">
-        <div class="img-callout">📸 Click to View Full Image (2160px High Res)</div>
-    </div>
+                    <div class="big-image-container" onclick="openFullImage()">
+                        <img src="week1.jpg" alt="OJT Photo" id="weekImg" class="large-ojt-pic">
+                        <div class="img-callout">📸 Click to View Full Image</div>
+                    </div>
 
-    <div class="weekly-stats">
-        <div class="stat-item">
-            <h5>Status</h5>
-            <p id="weekRemarks" class="status-badge">Accomplished</p>
-        </div>
-        <div class="stat-item">
-            <h5>Problems Met</h5>
-            <p id="weekProblems">None</p>
-        </div>
-    </div>
-  
-    <div class="weekly-details">
-        <div class="detail-box">
-            <h5>🚀 Key Accomplishments</h5>
-            <p id="weekAccomplishments">Introduction to attorney and staff...</p>
-        </div>
-        <div class="detail-box">
-            <h5>💡 Skills Learned</h5>
-            <ul id="weekSkills"></ul>
-        </div>
-    </div>
-</div>
+                    <div class="weekly-stats">
+                        <div class="stat-item">
+                            <h5>Status</h5>
+                            <p id="weekRemarks" class="status-badge">Accomplished</p>
+                        </div>
+                        <div class="stat-item">
+                            <h5>Problems Met</h5>
+                            <p id="weekProblems">None</p>
+                        </div>
+                    </div>
+                  
+                    <div class="weekly-details">
+                        <div class="detail-box">
+                            <h5>🚀 Key Accomplishments</h5>
+                            <p id="weekAccomplishments">Introduction to attorney and staff...</p>
+                        </div>
+                        <div class="detail-box">
+                            <h5>💡 Skills Learned</h5>
+                            <ul id="weekSkills"></ul>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="table-container">
                     <h4>📊 Full Internship Log</h4>
@@ -123,10 +124,14 @@
                                 <th>Remarks</th>
                             </tr>
                         </thead>
-                        <tbody id="fullLogTable">
-                            </tbody>
+                        <tbody id="fullLogTable"></tbody>
                     </table>
                 </div>
+
+        <div id="imageModal" class="modal-zoom">
+            <span class="close-modal" onclick="closeFullImage()">&times;</span>
+            <img class="modal-content" id="fullImg">
+        </div>
 
                 <div class="section-header mt-50">
     <span class="section-number">B</span>
@@ -349,6 +354,17 @@
 
             </section>
         </div>
+        <div id="docViewer" class="viewer-modal">
+        <span class="close-viewer" onclick="closeGallery()">&times;</span>
+        <div class="viewer-content">
+            <img id="viewerImg" src="">
+            <div class="viewer-controls">
+                <button id="prevBtn" onclick="changeImage(-1)">❮ Previous</button>
+                <span id="pageIndicator">1 / 1</span>
+                <button id="nextBtn" onclick="changeImage(1)">Next ❯</button>
+            </div>
+        </div>
+    </div>
     </main>
 
     <script src="script.js"></script>
@@ -359,5 +375,32 @@
             updateWeeklyReport();
         };
     </script>
+    <footer class="portfolio-footer">
+    <div class="footer-content">
+        <h3>E-PORTFOLIO NAVIGATION</h3>
+        <div class="footer-nav-grid">
+            <a href="chapter1.html" class="footer-btn">
+                <span class="btn-num">01</span>
+                <span class="btn-txt">Introduction</span>
+            </a>
+            <a href="chapter2.html" class="footer-btn">
+                <span class="btn-num">02</span>
+                <span class="btn-txt">Company Profile</span>
+            </a>
+            <a href="chapter3.html" class="footer-btn">
+                <span class="btn-num">03</span>
+                <span class="btn-txt">Work Experiences</span>
+            </a>
+            <a href="appendices.html" class="footer-btn">
+                <span class="btn-num">04</span>
+                <span class="btn-txt">Appendices</span>
+            </a>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 | John Mark Q. Bacuel</p>
+            <p>BSIT Intern - Villamar Law Office</p>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
