@@ -305,3 +305,29 @@ function toggleDropdown(element) {
         subMenu.classList.add('show');
     }
 }
+
+function introduce(role) {
+    let title = "";
+    let message = "";
+
+    switch(role) {
+        case 'atty':
+            title = "Atty. Lawrence P. Villamar";
+            message = "He is the Lead Counsel and Owner of Villamar Law Office. He oversees all legal strategies and ensures the firm provides top-tier legal services to every client.";
+            break;
+        case 'secretary':
+            title = "Ana Liza Sales";
+            message = "She is our Secretary. She manages legal documentation, client appointments, and ensures the office's administrative workflow runs smoothly.";
+            break;
+        case 'staff':
+            title = "Micle Pascual";
+            message = "He is our dedicated Office Staff. He assists in day-to-day operations and provides essential support for various administrative and legal tasks.";
+            break;
+        default:
+            title = "Team Member";
+            message = "A valuable member of the Villamar Law Office team.";
+    }
+
+    // Displays the introduction in a browser alert box
+    alert("Meet " + title + "\n\n" + message);
+}

@@ -73,11 +73,21 @@ body {
     background: var(--white);
     z-index: 2001;
     transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    padding: 40px 30px;
     box-shadow: 15px 0 35px rgba(0,0,0,0.05);
+    
+    /* Ginawang Flex para ma-control ang scrollable area */
+    display: flex;
+    flex-direction: column;
+    padding: 30px 0; /* Tinanggal ang horizontal padding para sa nav-links custom scroll */
 }
 
-.sidebar.active { left: 0; }
+.sidebar.active { 
+    left: 0; 
+}
+
+.sidebar-header {
+    padding: 0 30px; /* Binalik ang padding dito para sa header */
+}
 
 .close-btn {
     font-size: 30px;
@@ -92,45 +102,48 @@ body {
     display: flex;
     align-items: center;
     gap: 15px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     padding-bottom: 20px;
     border-bottom: 1px solid var(--bg-light);
 }
 
 .avatar-img {
-    width: 60px;          /* Size ng picture */
-    height: 60px;         /* Size ng picture */
-    border-radius: 50%;   /* Ginagawang bilog */
-    object-fit: cover;    /* Pinipigilan na ma-stretch ang image */
-    border: 2px solid var(--accent); /* Optional: Gold border para sosyal */
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--accent);
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .profile-text h3 {
-    font-size: 1rem;
-    color: var(--primary);
+    font-size: 0.95rem;
+    color: var(--dark-blue);
     margin-bottom: 2px;
 }
 
 .profile-text p {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: var(--text-grey);
 }
 
-.avatar {
-    width: 50px;
-    height: 50px;
-    background: var(--primary);
-    color: white;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 800;
+/* --- ITO ANG PINAKA-IMPORTANTE PARA SA SCROLL --- */
+.nav-links {
+    flex: 1;                /* Kinukuha ang lahat ng natitirang space sa gitna */
+    overflow-y: auto;       /* Dito lalabas ang scrollbar kapag mahaba na ang listahan */
+    padding: 0 30px;        /* Side padding para sa mga links */
+    margin-bottom: 20px;
 }
 
-.profile-text h3 { font-size: 0.95rem; color: var(--dark-blue); }
-.profile-text p { font-size: 0.75rem; color: var(--text-grey); }
+/* Custom Scrollbar Design (Para hindi pangit tingnan) */
+.nav-links::-webkit-scrollbar {
+    width: 5px;
+}
+
+.nav-links::-webkit-scrollbar-thumb {
+    background: var(--bg-light);
+    border-radius: 10px;
+}
 
 .nav-links a {
     display: block;
@@ -148,17 +161,22 @@ body {
     color: var(--primary);
 }
 
-.label { font-size: 0.7rem; font-weight: 800; color: #a3aed0; margin: 25px 0 10px; padding-left: 15px; }
+.label { 
+    font-size: 0.7rem; 
+    font-weight: 800; 
+    color: #a3aed0; 
+    margin: 25px 0 10px; 
+    padding-left: 15px; 
+}
 
 .sidebar-footer {
-    position: absolute;
-    bottom: 30px;
-    left: 30px;
-    right: 30px;
+    position: relative;     /* Mula absolute, ginawang relative para sumunod sa flexbox flow */
+    margin: 0 30px;         /* Padding-like margins */
     background: var(--bg-light);
     padding: 15px;
     border-radius: 15px;
     font-size: 0.75rem;
+    margin-top: auto;       /* Sinisigurado na nasa pinaka-baba lagi */
 }
 
 /* Hero Section */
@@ -476,7 +494,7 @@ blockquote {
     .info-grid { grid-template-columns: 1fr; }
 }
 
-                   /* Chapter 2 Specific Styles */
+                                                                       /* Chapter 2 Specific Styles */
 
 /* Image Styling */
 .image-container {
@@ -677,7 +695,195 @@ blockquote {
     .profile-container { grid-template-columns: 1fr; }
 }
 
-                /* Chapter 3 Styling */
+/* --- Modern Org Tree Section --- */
+
+.org-intro {
+    margin-bottom: 50px;
+    line-height: 1.6;
+    color: var(--text-grey);
+    border-left: 4px solid var(--primary);
+    padding-left: 20px;
+}
+
+.org-chart-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0 50px 0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    overflow-x: auto; /* Para sa mobile, pwedeng i-scroll pakanan */
+}
+
+/* Base Tree Structure (Linya) */
+.org-tree ul {
+    padding-top: 20px;
+    position: relative;
+    transition: all 0.5s;
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+}
+
+.org-tree li {
+    float: left;
+    text-align: center;
+    list-style-type: none;
+    position: relative;
+    padding: 20px 15px 0 15px;
+    transition: all 0.5s;
+}
+
+/* Ang mga Linyang Konektor */
+.org-tree li::before, .org-tree li::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 50%;
+    border-top: 2px solid #d0d7ff; /* Kulay ng linya */
+    width: 50%;
+    height: 20px;
+}
+
+.org-tree li::after {
+    right: auto;
+    left: 50%;
+    border-left: 2px solid #d0d7ff;
+}
+
+/* Tanggalin ang konektor sa gilid ng single lines */
+.org-tree li:only-child::after, .org-tree li:only-child::before {
+    display: none;
+}
+
+.org-tree li:only-child {
+    padding-top: 0;
+}
+
+.org-tree li:first-child::before, .org-tree li:last-child::after {
+    border: 0 none;
+}
+
+.org-tree li:last-child::before {
+    border-right: 2px solid #d0d7ff;
+    border-radius: 0 5px 0 0;
+}
+
+.org-tree li:first-child::after {
+    border-radius: 5px 0 0 0;
+}
+
+/* Linyang pababa galing sa parent */
+.org-tree ul ul::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    border-left: 2px solid #d0d7ff;
+    width: 0;
+    height: 20px;
+}
+
+/* --- Node Styling (Ang Card mismo) --- */
+
+.node-container {
+    background: #fff;
+    border: 1px solid #eef2ff;
+    padding: 20px;
+    border-radius: 15px;
+    display: inline-block;
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+    min-width: 180px;
+}
+
+.node-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    border-color: var(--primary);
+}
+
+/* Highlight para kay Atty. Lawrence */
+.leader-node {
+    border: 2px solid var(--primary);
+    background: linear-gradient(135deg, #ffffff, #fcfdff);
+}
+
+/* Image Styling (Bilog) */
+.node-image {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 15px auto;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #fff;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    background-color: #e0e0e0; /* Placeholder color kung walang image */
+}
+
+.node-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Siguraduhing sakop ang buong bilog */
+    display: block;
+}
+
+/* Text Styling */
+.node-details h4 {
+    font-size: 1rem;
+    color: var(--dark-blue);
+    margin: 0 0 5px 0;
+    font-weight: 700;
+}
+
+.node-details .role {
+    font-size: 0.75rem;
+    color: var(--primary);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: block;
+}
+
+/* --- Responsive (Mobile) --- */
+@media (max-width: 600px) {
+    /* Sa mobile, gagawin nating vertical list para hindi siksikan */
+    .org-tree ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .org-tree li {
+        width: 100%;
+        padding: 20px 0;
+    }
+    
+    /* Tanggalin ang mga kumplikadong linya sa mobile */
+    .org-tree li::before, .org-tree li::after,
+    .org-tree ul ul::before {
+        display: none;
+    }
+    
+    /* Maglagay ng simpleng linyang pababa sa pagitan */
+    .org-tree li:not(:last-child) .node-container::after {
+        content: '';
+        position: absolute;
+        bottom: -20px;
+        left: 50%;
+        width: 2px;
+        height: 20px;
+        background: #d0d7ff;
+    }
+
+    .node-container {
+        width: 80%;
+    }
+}
+.node-container {
+    cursor: pointer; /* Magmumulang link ang mouse */
+}
+
+                                                                /* Chapter 3 Styling */
 /* Chapter 3 Specific Styles */
 .report-controls {
     margin: 20px 0;

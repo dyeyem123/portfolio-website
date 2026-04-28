@@ -55,7 +55,9 @@
         <div class="sub-menu">
             <a href="chapter2.html#nature">1. Nature of Agency</a>
             <a href="chapter2.html#mission">2. Mission/Vision</a>
-            <a href="chapter2.html#history">3. History</a>
+            <a href="chapter2.html#history">3. Background of the agency</a>
+            <a href="chapter2.html#lawyer">4. Lawyer's Profile</a>
+            <a href="chapter2.html#OS">5. Organizational Structure</a>
         </div>
     </div>
 
@@ -67,6 +69,8 @@
         <div class="sub-menu">
             <a href="chapter3.html#weekly">1. Weekly Reports</a>
             <a href="chapter3.html#dtr">2. Daily Time Record</a>
+            <a href="chapter3.html#progress">3. Internship Progress Report</a>
+            <a href="chapter3.html#analysis">4. Internship Analysis Report</a>
         </div>
     </div>
 
@@ -83,7 +87,7 @@
 <main>
     <div class="container sub-container">
         
-        <section class="content-card">
+        <section id="nature" class="content-card">
             <h2 class="section-title">CHAPTER II: AGENCY PROFILE</h2>
             
             <div class="agency-section">
@@ -98,7 +102,7 @@
             </div>
         </section>
 
-        <section class="content-card">
+        <section id="history" class="content-card">
             <div class="section-header">
                 <span class="section-number">2</span>
                 <h3>BACKGROUND OF THE AGENCY</h3>
@@ -115,7 +119,7 @@
             </div>
         </section>
 
-        <section class="content-card lawyer-profile-card">
+        <section id="lawyer" class="content-card lawyer-profile-card">
     <div class="section-header">
         <span class="section-number">3</span>
         <h3>LAWYER'S PROFILE</h3>
@@ -180,6 +184,59 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+<section id="OS" class="content-card">
+    <div class="section-header">
+        <span class="section-number">4</span>
+        <h3>ORGANIZATIONAL STRUCTURE</h3>
+    </div>
+
+    <div class="org-intro">
+        <p>As a <strong>Private Law Office</strong>, Villamar Law Office maintains a streamlined and efficient organizational setup. Click on each member to learn more about them.</p>
+    </div>
+
+    <div class="org-chart-wrapper">
+        <div class="org-tree">
+            <ul>
+                <li>
+                    <div class="node-container leader-node" onclick="introduce('atty')">
+                        <div class="node-image">
+                            <img src="atty_lawrence.jpg" alt="Atty. Lawrence P. Villamar">
+                        </div>
+                        <div class="node-details">
+                            <h4>Atty. Lawrence P. Villamar</h4>
+                            <span class="role">Lead Counsel / Owner</span>
+                        </div>
+                    </div>
+                    
+                    <ul>
+                        <li>
+                            <div class="node-container" onclick="introduce('secretary')">
+                                <div class="node-image">
+                                    <img src="ana_liza.jpg" alt="Ana Liza Sales">
+                                </div>
+                                <div class="node-details">
+                                    <h4>Ana Liza Sales</h4>
+                                    <span class="role">Secretary</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="node-container" onclick="introduce('staff')">
+                                <div class="node-image">
+                                    <img src="micle_pascual.jpg" alt="Micle Pascual">
+                                </div>
+                                <div class="node-details">
+                                    <h4>Micle Pascual</h4>
+                                    <span class="role">Office Staff</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
         </div>
     </div>
 </section>
