@@ -331,3 +331,36 @@ function introduce(role) {
     // Displays the introduction in a browser alert box
     alert("Meet " + title + "\n\n" + message);
 }
+document.addEventListener("DOMContentLoaded", function() {
+    let progressBar = document.getElementById("progress-bar");
+    let percentageText = document.querySelector(".loading-percentage");
+    let loader = document.getElementById("loader-wrapper");
+    let modal = document.getElementById("info-modal");
+
+    let width = 0;
+    let loadingInterval = setInterval(function() {
+        if (width >= 100) {
+            clearInterval(loadingInterval);
+            // Pag tapos na ang loading
+            loader.style.opacity = "0";
+            setTimeout(() => {
+                loader.style.display = "none";
+                // Lalabas ang Modal pagkatapos ng loading
+                modal.style.display = "flex";
+                setTimeout(() => modal.classList.add("active"), 10);
+            }, 500);
+        } else {
+            width++;
+            progressBar.style.width = width + "%";
+            percentageText.innerHTML = width + "%";
+        }
+    }, 25); // Bilis ng loading (25ms per 1%)
+});
+
+function closeModal() {
+    let modal = document.getElementById("info-modal");
+    modal.classList.remove("active");
+    setTimeout(() => {
+        modal.style.display = "none";
+    }, 300);
+}

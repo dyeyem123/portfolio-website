@@ -45,6 +45,34 @@
         }
     </style>
 </head>
+<div id="loader-wrapper">
+    <div class="loader-content">
+        <div class="welcome-text">Hi, Welcome to my E-Portfolio</div>
+        <div class="progress-bar-container">
+            <div class="progress-bar" id="progress-bar"></div>
+        </div>
+        <div class="loading-percentage">0%</div>
+    </div>
+</div>
+
+<div id="info-modal" class="modal-overlay">
+    <div class="modal-box">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <div class="modal-header">
+            <img src="me.png" alt="Student" class="modal-avatar">
+            <h2>Student Profile</h2>
+        </div>
+        <div class="modal-body">
+            <div class="info-row"><strong>Student Name:</strong> <span>John Mark Q. Bacuel</span></div>
+            <div class="info-row"><strong>Student ID:</strong> <span>MA22-IT-02610</span></div>
+            <div class="info-row"><strong>Course & Year:</strong> <span>BSIT-4D</span></div>
+            <div class="info-row"><strong>Internship Period:</strong> <span>Feb 2 - May 5, 2026</span></div>
+            <div class="info-row"><strong>Agency:</strong> <span>Villamar Law Office</span></div>
+            <div class="info-row"><strong>OJT Coordinator:</strong> <span>Rommel C. Sanqui</span></div>
+        </div>
+        <button class="modal-btn" onclick="closeModal()">Explore Portfolio</button>
+    </div>
+</div>
 <body>
 
     <header class="main-header">
