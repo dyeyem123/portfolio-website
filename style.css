@@ -2117,3 +2117,44 @@ blockquote {
     0%, 100% { opacity: 0.3; }
     50% { opacity: 1; }
 }
+/* --- MODAL ALIGNMENT STYLES --- */
+.modal-body {
+    padding: 10px 0;
+}
+
+.info-group {
+    display: flex;
+    justify-content: flex-start; /* Naka-align sa simula */
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    font-size: 0.95rem;
+}
+
+.info-group:last-child {
+    border-bottom: none; /* Tanggalin ang line sa huling item */
+}
+
+/* Eto yung magpapantay sa mga labels */
+.info-label {
+    font-weight: 800;
+    color: #0a192f;
+    min-width: 150px; /* Lahat ng label ay may fixed width para pantay ang kasunod */
+    flex-shrink: 0;   /* Para hindi mapitpit ang label sa mobile */
+}
+
+.info-value {
+    color: var(--text-grey);
+    font-weight: 500;
+    padding-left: 10px;
+}
+
+/* Responsive adjustment para sa maliliit na phone */
+@media (max-width: 400px) {
+    .info-group {
+        flex-direction: column; /* Magiging magkapatong pag sobrang sikip na */
+        gap: 2px;
+    }
+    .info-label {
+        min-width: unset;
+    }
+}
