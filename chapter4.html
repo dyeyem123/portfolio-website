@@ -92,81 +92,89 @@
 
     <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
 
-    <main>
+   <main>
     <div class="container sub-container">
-        <section id="importance" class="content-card">
-            <h2 class="section-title">CHAPTER I: INTRODUCTION</h2>
+        <section id="evaluation" class="content-card">
+            <h2 class="section-title">CHAPTER IV: ASSESSMENT OF THE PRACTICUM PROGRAM</h2>
             
-            <div class="section-header">
+            <div id="evaluation" class="section-header">
                 <span class="section-number">A</span>
-                <h3>IMPORTANCE OF INTERNSHIP</h3>
+                <h3>STUDENT INTERNSHIP EVALUATION FORM</h3>
             </div>
-            <div class="content-body">
-                <div class="justified-text" class="importance-box">
-                    <p>The importance of internship is to provide students with actual experience in a real work environment related to their field. Through this internship at a law office, I was able to observe and understand how legal documents are processed, especially in notarization and handling of important papers.</p>
-                    <div class="skill-tags">
-                        <span>Responsibility</span>
-                        <span>Attention to Detail</span>
-                        <span>Communication</span>
-                        <span>Legal Procedures</span>
+
+            <div class="evaluation-gallery">
+                <img src="eval-page1.jpg" alt="Page 1" class="clickable-img" onclick="openModal(this.src)">
+                <img src="eval-page2.jpg" alt="Page 2" class="clickable-img" onclick="openModal(this.src)">
+                <img src="eval-page3.jpg" alt="Page 3" class="clickable-img" onclick="openModal(this.src)">
+               
+            </div>
+
+            <hr class="section-divider">
+
+            <div class="performance-summary">
+                <div class="summary-header">
+                    <h3>Performance Evaluation Summary</h3>
+                    <p>Ratings Overview</p>
+                </div>
+
+                <div class="summary-content">
+                    <div class="ratings-table">
+                        <div class="rating-row"><span>SR — Student Self-Rating</span> <strong>262</strong></div>
+                        <div class="rating-row"><span>PR — Peer Rating</span> <strong>263</strong></div>
+                        <div class="rating-row"><span>SICR — Student Internship Coordinator Rating</span> <strong>" Wala pa "</strong></div>
+                        <div class="rating-row"><span>ASR — Agency Supervisor Rating</span> <strong>233</strong></div>
+                    </div>
+
+                    <div class="overall-rating-box">
+                        <div class="percent">
+                            <svg>
+                                <circle cx="70" cy="70" r="70"></circle>
+                                <circle cx="70" cy="70" r="70" id="progress-circle"></circle>
+                            </svg>
+                            <div class="number">
+                                <h3>"Wala pa"</h3>
+                            </div>
+                        </div>
+                        <h4>Overall Rating</h4>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <section id="objectives" class="content-card">
-            <div class="section-header">
-                <span class="section-number">B</span>
-                <h3>OBJECTIVES OF INTERNSHIP</h3>
-            </div>
-            <div class="objectives-grid">
-                <div class="obj-card">
-                    <div class="obj-icon">📄</div>
-                    <p >Assist in preparation and organization of legal documents for notarization.</p>
+                <div class="comment-box">
+                    <h4>General Comments on Student's Overall Performance</h4>
+                    <blockquote>“May comment dito”</blockquote>
                 </div>
-                <div class="obj-card">
-                    <div class="obj-icon">✍️</div>
-                    <p>Record and encode entries in the Notarial Register.</p>
-                </div>
-                <div class="obj-card">
-                    <div class="obj-icon">🆔</div>
-                    <p>Verify and collect valid identification cards (IDs) of clients.</p>
-                </div>
-                <div class="obj-card">
-                    <div class="obj-icon">📁</div>
-                    <p>Organize and file documents such as contracts, affidavits, and consent forms.</p>
-                </div>
-                <div class="obj-card">
-                    <div class="obj-icon">🤝</div>
-                    <p>Assist clients and guide them through the notarization process.</p>
-                </div>
-                <div class="obj-card">
-                    <div class="obj-icon">📧</div>
-                    <p>Assist in scanning and sending documents through email.</p>
-                </div>
-            </div>
-        </section>
 
-        <section id="time-place" class="content-card">
-            <div class="section-header">
-                <span class="section-number">C</span>
-                <h3>TIME AND PLACE</h3>
-            </div>
-            <div class="info-grid">
-                <div class="info-item">
-                    <h4>📅 Schedule</h4>
-                    <p>Monday to Friday</p>
-                    <p><strong>8:00 AM – 5:00 PM</strong></p>
-                </div>
-                <div class="info-item">
-                    <h4>📍 Location</h4>
-                    <p><strong>Villamar Law Office</strong></p>
-                    <p>2F Lebrilla Bldg., P. Burgos St., Brgy. Poblacion 1 San Jose, Occidental Mindoro</p>
+                <div class="rated-by-grid">
+                    <div class="rater-card">
+                        <p class="role">Student Intern</p>
+                        <p class="name">John Mark Bacuel</p>
+                        <p class="date">May 5, 2025</p>
+                    </div>
+                    <div class="rater-card">
+                        <p class="role">Peer</p>
+                        <p class="name">Micle Angelo Pascual</p>
+                        <p class="date">May 5, 2025</p>
+                    </div>
+                    <div class="rater-card">
+                        <p class="role">Coordinator</p>
+                        <p class="name">Rommel C. Sanqui</p>
+                        <p class="date">May 5, 2025</p>
+                    </div>
+                    <div class="rater-card">
+                        <p class="role">Agency Supervisor</p>
+                        <p class="name">Atty. Lawrence P. Villamar</p>
+                        <p class="date">May 5, 2025</p>
+                    </div>
                 </div>
             </div>
         </section>
     </div>
 </main>
+
+<div id="imageModal" class="modal">
+    <span class="close-modal" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="imgFull">
+</div>
 
     <script src="script.js"></script>
     <footer class="portfolio-footer">
@@ -186,9 +194,9 @@
                 <span class="btn-txt">Work Experiences</span>
             </a>
             <a href="chapter4.html" class="footer-btn">
-        <span class="btn-num">04</span>
-        <span class="btn-txt">Assessment</span>
-    </a>
+                <span class="btn-num">04</span>
+                <span class="btn-txt">Assessment</span>
+            </a>
             <a href="appendices.html" class="footer-btn">
                 <span class="btn-num">04</span>
                 <span class="btn-txt">Appendices</span>

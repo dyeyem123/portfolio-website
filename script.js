@@ -364,3 +364,20 @@ function closeModal() {
         modal.style.display = "none";
     }, 300);
 }
+
+
+
+// Circular Progress Animation
+window.onload = function() {
+    const circle = document.getElementById('progress-circle');
+    const rating = 4.86;
+    const maxRating = 5;
+    const percentage = (rating / maxRating) * 100;
+    
+    // Formula for circle offset: 440 - (440 * percentage) / 100
+    const offset = 440 - (440 * percentage) / 100;
+    
+    setTimeout(() => {
+        circle.style.strokeDashoffset = offset;
+    }, 500);
+};
