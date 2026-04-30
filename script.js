@@ -381,3 +381,35 @@ window.onload = function() {
         circle.style.strokeDashoffset = offset;
     }, 500);
 };
+
+// Intersection Observer para sa Scroll Animation
+const observerOptions = {
+    threshold: 0.1 // Lalabas ang box kapag 10% na nito ang kita
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('reveal');
+        } else {
+            // Tanggalin ito kung gusto mong isang beses lang lumabas
+            // Pero sabi mo "pataas at pababa", kaya dapat i-remove para mag-animate ulit
+            entry.target.classList.remove('reveal');
+        }
+    });
+}, observerOptions);
+
+// I-apply sa lahat ng sections na may class na content-card
+document.querySelectorAll('.content-card').forEach(section => {
+    observer.observe(section);
+});
+
+// Smooth Scroll para sa lahat ng links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
