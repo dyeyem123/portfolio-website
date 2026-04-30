@@ -179,14 +179,102 @@ body {
     margin-top: auto;       /* Sinisigurado na nasa pinaka-baba lagi */
 }
 
-/* Hero Section */
+
+/* 1. Hero Fullscreen Adjustment */
+.hero-fullscreen {
+    height: 100vh; /* Siguradong occupy ang buong screen */
+    display: flex;
+    background: url('bg.png') center/cover no-repeat fixed;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Scroll Indicator (Yung arrow sa baba) */
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s infinite;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 10;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0) translateX(-50%);}
+    40% {transform: translateY(-10px) translateX(-50%);}
+    60% {transform: translateY(-5px) translateX(-50%);}
+}
+
+/* 2. Content Reveal Animation */
+.content-card {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+}
+
+.content-card.reveal {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 3. Book-Style Table of Contents */
+.detailed-toc {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    perspective: 1000px;
+}
+
+.toc-item {
+    background: #fff;
+    padding: 20px;
+    border-left: 10px solid var(--accent); /* Para magmukhang spine ng libro */
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.5s ease;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+}
+
+.toc-item:hover {
+    transform: rotateY(-10deg) scale(1.02); /* Book opening effect */
+    box-shadow: 15px 10px 25px rgba(0,0,0,0.2);
+}
+
+.toc-header {
+    font-family: 'Oswald', sans-serif;
+    border-bottom: 2px solid #eee;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.toc-sublist li {
+    list-style: none;
+    padding: 5px 0;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.toc-sublist li:hover {
+    color: var(--accent);
+    padding-left: 5px;
+}
+/* I-set ang Hero sa Full Screen para Background lang ang kita sa simula */
 .hero-fullscreen {
     height: 100vh;
+    display: flex;
     background: url('bg.png') center/cover no-repeat fixed;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     position: relative;
 }
 
 .hero-overlay {
+    width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.2);
     display: flex;
@@ -2254,3 +2342,5 @@ blockquote {
 .rated-by-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 30px; }
 .rater-card { border-left: 3px solid #3498db; padding-left: 10px; }
 .role { font-weight: bold; color: #7f8c8d; font-size: 0.8rem; }
+
+
