@@ -242,8 +242,8 @@ body {
 
     /* Disable animation sa mobile kung laggy o ayaw lumitaw */
     .content-card {
-        opacity: 1 !important;
-        transform: none !important;
+       transform: translateY(20px);
+        
     }
 }
 /* 3. Book-Style Table of Contents */
