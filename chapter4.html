@@ -101,78 +101,97 @@
 
     <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
 
-   <main>
+ <main>
     <div class="container sub-container">
         <section id="evaluation" class="content-card">
             <h2 class="section-title">CHAPTER IV: ASSESSMENT OF THE PRACTICUM PROGRAM</h2>
             
-            <div id="evaluation" class="section-header">
+            <div class="section-header">
                 <span class="section-number">A</span>
                 <h3>STUDENT INTERNSHIP EVALUATION FORM</h3>
             </div>
 
+            <!-- Click to Enlarge Gallery -->
             <div class="evaluation-gallery">
-                <img src="eval-page1.jpg" alt="Page 1" class="clickable-img" onclick="openModal(this.src)">
-                <img src="eval-page2.jpg" alt="Page 2" class="clickable-img" onclick="openModal(this.src)">
-                <img src="eval-page3.jpg" alt="Page 3" class="clickable-img" onclick="openModal(this.src)">
-               
+                <div class="img-wrapper" onclick="openModal('eval-page1.jpg')">
+                    <img src="eval-page1.jpg" alt="Page 1">
+                    <div class="img-overlay"><i class="fas fa-search-plus"></i> View</div>
+                </div>
+                <div class="img-wrapper" onclick="openModal('eval-page2.jpg')">
+                    <img src="eval-page2.jpg" alt="Page 2">
+                    <div class="img-overlay"><i class="fas fa-search-plus"></i> View</div>
+                </div>
+                <div class="img-wrapper" onclick="openModal('eval-page3.jpg')">
+                    <img src="eval-page3.jpg" alt="Page 3">
+                    <div class="img-overlay"><i class="fas fa-search-plus"></i> View</div>
+                </div>
             </div>
 
             <hr class="section-divider">
 
             <div class="performance-summary">
-                <div class="summary-header">
-                    <h3>Performance Evaluation Summary</h3>
-                    <p>Ratings Overview</p>
+                <h3>Performance Evaluation Summary</h3>
+                
+                <!-- Progress Bars for Ratings -->
+                <div class="progress-section">
+                    <div class="bar-item">
+                        <div class="bar-label"><span>SR</span> Student Self-Rating <strong>269/300</strong></div>
+                        <div class="bar-container"><div class="bar-fill" style="width: 89.6%;"></div></div>
+                    </div>
+                    <div class="bar-item">
+                        <div class="bar-label"><span>PR</span> Peer Rating <strong>266/300</strong></div>
+                        <div class="bar-container"><div class="bar-fill" style="width: 88.6%;"></div></div>
+                    </div>
+                    <div class="bar-item">
+                        <div class="bar-label"><span>SICR</span> Coordinator Rating <strong>Pending</strong></div>
+                        <div class="bar-container"><div class="bar-fill" style="width: 0%;"></div></div>
+                    </div>
+                    <div class="bar-item">
+                        <div class="bar-label"><span>ASR</span> Agency Supervisor Rating <strong>267/300</strong></div>
+                        <div class="bar-container"><div class="bar-fill" style="width: 89%;"></div></div>
+                    </div>
                 </div>
 
-                <div class="summary-content">
-                    <div class="ratings-table">
-                        <div class="rating-row"><span>SR — Student Self-Rating</span> <strong>269</strong></div>
-                        <div class="rating-row"><span>PR — Peer Rating</span> <strong>266</strong></div>
-                        <div class="rating-row"><span>SICR — Student Internship Coordinator Rating</span> <strong>" "</strong></div>
-                        <div class="rating-row"><span>ASR — Agency Supervisor Rating</span> <strong>267</strong></div>
-                    </div>
-
-                    <div class="overall-rating-box">
-                        <div class="percent">
-                            <svg>
-                                <circle cx="70" cy="70" r="70"></circle>
-                                <circle cx="70" cy="70" r="70" id="progress-circle"></circle>
-                            </svg>
-                            <div class="number">
-                                <h3>3.21</h3>
-                            </div>
+                <!-- Circular Total at the Bottom -->
+                <div class="total-score-wrapper">
+                    <div class="circle-progress">
+                        <div class="inner-circle">
+                            <span class="total-num">3.21</span>
+                            <span class="total-label">Overall GPA</span>
                         </div>
-                        <h4>Overall Rating</h4>
                     </div>
                 </div>
 
                 <div class="comment-box">
-                    <h4>General Comments on Student's Overall Performance</h4>
-                    <blockquote>“May comment dito”</blockquote>
+                    <h4>General Comments</h4>
+                    <blockquote>“Congratulations!!!”</blockquote>
                 </div>
 
+                <!-- Raters with Pictures -->
                 <div class="rated-by-grid">
                     <div class="rater-card">
+                        <div class="rater-img"><img src="me.png" alt="Intern"></div>
                         <p class="role">Student Intern</p>
                         <p class="name">John Mark Bacuel</p>
-                        <p class="date">May 5, 2025</p>
+                        <p class="date">May 5, 2026</p>
                     </div>
                     <div class="rater-card">
+                        <div class="rater-img"><img src="micle_pascual.jpg" alt="Peer"></div>
                         <p class="role">Peer</p>
                         <p class="name">Micle Angelo Pascual</p>
-                        <p class="date">May 5, 2025</p>
+                        <p class="date">May 5, 2026</p>
                     </div>
                     <div class="rater-card">
+                        <div class="rater-img"><img src="rommel.jpg" alt="Coordinator"></div>
                         <p class="role">Coordinator</p>
                         <p class="name">Rommel C. Sanqui</p>
-                        <p class="date">May 5, 2025</p>
+                        <p class="date">May 5, 2026</p>
                     </div>
                     <div class="rater-card">
+                        <div class="rater-img"><img src="atty_lawrence.jpg" alt="Supervisor"></div>
                         <p class="role">Agency Supervisor</p>
                         <p class="name">Atty. Lawrence P. Villamar</p>
-                        <p class="date">May 5, 2025</p>
+                        <p class="date">May 5, 2026</p>
                     </div>
                 </div>
             </div>
@@ -180,10 +199,15 @@
     </div>
 </main>
 
+<!-- Modern Modal structure -->
 <div id="imageModal" class="modal">
-    <span class="close-modal" onclick="closeModal()">&times;</span>
+    <div class="modal-controls">
+        <span class="close-modal" onclick="closeFullImage()">&times;</span>
+    </div>
     <img class="modal-content" id="imgFull">
 </div>
+
+
 
     <script src="script.js"></script>
     <footer class="portfolio-footer">
