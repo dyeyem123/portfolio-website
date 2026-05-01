@@ -221,7 +221,7 @@ body {
 /* Gagamit tayo ng class na 'js-enabled' para sa animation */
 /* Ito ay para kung sakaling mag-fail ang JS, hindi mawawala ang content mo */
 .js-enabled .content-card {
-    opacity: 0;
+    opacity: 1;
     transform: translateY(30px);
 }
 
