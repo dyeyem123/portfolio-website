@@ -209,18 +209,43 @@ body {
     60% {transform: translateY(-5px) translateX(-50%);}
 }
 
-/* 2. Content Reveal Animation */
+/* 2. Content Reveal Animation - MODIFIED */
 .content-card {
-    opacity: 0;
-    transform: translateY(50px);
+    /* Default: Visible para safe sa lahat ng device */
+    opacity: 1;
+    transform: translateY(0);
     transition: all 0.8s ease-out;
+    margin-bottom: 30px; /* Dagdag na space sa mobile */
 }
 
-.content-card.reveal {
+/* Gagamit tayo ng class na 'js-enabled' para sa animation */
+/* Ito ay para kung sakaling mag-fail ang JS, hindi mawawala ang content mo */
+.js-enabled .content-card {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.js-enabled .content-card.reveal {
     opacity: 1;
     transform: translateY(0);
 }
 
+/* Book-Style Table of Contents Fix para sa Mobile */
+@media (max-width: 768px) {
+    .detailed-toc {
+        grid-template-columns: 1fr; /* Isang column lang sa phone */
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5rem; /* Mas maliit na font sa mobile */
+    }
+
+    /* Disable animation sa mobile kung laggy o ayaw lumitaw */
+    .content-card {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
 /* 3. Book-Style Table of Contents */
 .detailed-toc {
     display: grid;
@@ -2342,6 +2367,8 @@ blockquote {
 .rated-by-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 30px; }
 .rater-card { border-left: 3px solid #3498db; padding-left: 10px; }
 .role { font-weight: bold; color: #7f8c8d; font-size: 0.8rem; }
+
+
 /* Siguraduhin na laging kita ang kulay ng icons */
 .nav-links i {
     margin-right: 12px; 
@@ -2362,4 +2389,3 @@ blockquote {
     color: #ffffff; 
 } 
 */
-
