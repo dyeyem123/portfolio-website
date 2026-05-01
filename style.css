@@ -35,6 +35,8 @@ body {
     align-items: center;
     z-index: 1000;
     transition: 0.3s;
+    background: rgba(255, 255, 255, 0.1); /* Sobrang light na puti */
+    backdrop-filter: blur(10px);
 }
 
 .brand-name {
@@ -240,7 +242,7 @@ body {
         font-size: 2.5rem; /* Mas maliit na font sa mobile */
     }
 
-     /* Disable animation sa mobile kung laggy o ayaw lumitaw */
+    /* Disable animation sa mobile kung laggy o ayaw lumitaw */
     .content-card {
         opacity: 1 !important;
         transform: none !important;
@@ -348,27 +350,21 @@ body {
     margin: 0 auto 10px;
 }
 
-/* Detailed Table of Contents */
-.container {
-    max-width: 1100px;
-    margin: -100px auto 100px;
-    position: relative;
-    padding: 0 25px;
-}
+
 
 .content-card {
 
-    background: var(--white);
-
+    background: #ffffff; /* Dark charcoal */
+    border-top: 5px solid var(--accent); /* Gold line sa taas */
     padding: 70px;
-
     border-radius: 40px;
-
     box-shadow: 0 30px 60px rgba(0,0,0,0.04);
-
     margin-bottom: 50px;
 
 } 
+#toc.content-card {
+    margin-top: 160px; /* Mas malaking space para sa landing page */
+}
 
 
 
@@ -480,13 +476,15 @@ blockquote {
     .hero-content h1 { font-size: 3rem; }
     .content-card { padding: 40px 25px; }
 }
-/* Add padding to container for sub-pages */
+/* Update para sa container */
 .container {
     max-width: 1100px;
-    margin: 50px auto; /* Inadjust ko mula -100px para sa normal pages */
+    margin: 80px auto; /* Dinagdagan ang top margin para lumitaw ang Scroll Down indicator */
     position: relative;
     padding: 0 25px;
+    z-index: 2; /* Sinisiguro na nasa ibabaw ang content */
 }
+
 
 /* Specific fix para sa index lang yung -100px */
 .hero-fullscreen + .container {
