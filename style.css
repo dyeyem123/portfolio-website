@@ -240,10 +240,10 @@ body {
         font-size: 2.5rem; /* Mas maliit na font sa mobile */
     }
 
-    /* Disable animation sa mobile kung laggy o ayaw lumitaw */
+     /* Disable animation sa mobile kung laggy o ayaw lumitaw */
     .content-card {
-       transform: translateY(20px);
-        
+        opacity: 1 !important;
+        transform: none !important;
     }
 }
 /* 3. Book-Style Table of Contents */
