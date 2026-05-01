@@ -1,4 +1,4 @@
-document.documentElement.classList.add('js-enabled');
+
 /* ==========================================
    SIDEBAR & UI LOGIC
    ========================================== */
