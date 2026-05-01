@@ -1,8 +1,7 @@
-
 /* ==========================================
    SIDEBAR & UI LOGIC
    ========================================== */
-  document.documentElement.classList.add('js-enabled');
+ 
 function toggleMenu() {
     const sidebar = document.getElementById("sidebar");
     const overlay = document.getElementById("overlay");
@@ -415,24 +414,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
-function openModal(src) {
-    const modal = document.getElementById("imageModal");
-    const modalImg = document.getElementById("imgFull");
-    modal.style.display = "block";
-    modalImg.src = src;
-    document.body.style.overflow = "hidden"; // Disable scroll when open
-}
+  document.documentElement.classList.add('js-enabled');
 
-function closeModal() {
-    const modal = document.getElementById("imageModal");
-    modal.style.display = "none";
-    document.body.style.overflow = "auto"; // Enable scroll back
-}
-
-// Close modal if user clicks outside the image
-window.onclick = function(event) {
-    const modal = document.getElementById("imageModal");
-    if (event.target == modal) {
-        closeModal();
-    }
-}
+  
