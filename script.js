@@ -2,6 +2,7 @@
 /* ==========================================
    SIDEBAR & UI LOGIC
    ========================================== */
+  document.documentElement.classList.add('js-enabled');
 function toggleMenu() {
     const sidebar = document.getElementById("sidebar");
     const overlay = document.getElementById("overlay");
